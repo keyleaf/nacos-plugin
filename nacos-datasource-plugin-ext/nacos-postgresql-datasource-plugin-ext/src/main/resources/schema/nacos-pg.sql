@@ -17,7 +17,6 @@
 -- ----------------------------
 -- Table structure for config_info
 -- ----------------------------
-DROP TABLE IF EXISTS "config_info";
 CREATE TABLE "config_info" (
   "id" bigserial NOT NULL,
   "data_id" varchar(255)  NOT NULL,
@@ -55,7 +54,6 @@ COMMENT ON TABLE "config_info" IS 'config_info';
 -- ----------------------------
 -- Table structure for config_info_aggr
 -- ----------------------------
-DROP TABLE IF EXISTS "config_info_aggr";
 CREATE TABLE "config_info_aggr" (
   "id" bigserial NOT NULL,
   "data_id" varchar(255)  NOT NULL,
@@ -85,7 +83,6 @@ COMMIT;
 -- ----------------------------
 -- Table structure for config_info_beta
 -- ----------------------------
-DROP TABLE IF EXISTS "config_info_beta";
 CREATE TABLE "config_info_beta" (
   "id" bigserial NOT NULL,
   "data_id" varchar(255)  NOT NULL,
@@ -126,7 +123,6 @@ COMMIT;
 -- ----------------------------
 -- Table structure for config_info_tag
 -- ----------------------------
-DROP TABLE IF EXISTS "config_info_tag";
 CREATE TABLE "config_info_tag" (
   "id" bigserial NOT NULL,
   "data_id" varchar(255)  NOT NULL,
@@ -165,7 +161,6 @@ COMMIT;
 -- ----------------------------
 -- Table structure for config_tags_relation
 -- ----------------------------
-DROP TABLE IF EXISTS "config_tags_relation";
 CREATE TABLE "config_tags_relation" (
   "id" bigint NOT NULL,
   "tag_name" varchar(128)  NOT NULL,
@@ -193,7 +188,6 @@ COMMIT;
 -- ----------------------------
 -- Table structure for group_capacity
 -- ----------------------------
-DROP TABLE IF EXISTS "group_capacity";
 CREATE TABLE "group_capacity" (
   "id" bigserial NOT NULL,
   "group_id" varchar(128)  NOT NULL,
@@ -228,7 +222,6 @@ COMMIT;
 -- ----------------------------
 -- Table structure for his_config_info
 -- ----------------------------
-DROP TABLE IF EXISTS "his_config_info";
 CREATE TABLE "his_config_info" (
   "id" int8 NOT NULL,
   "nid" bigserial NOT NULL,
@@ -255,7 +248,6 @@ COMMENT ON TABLE "his_config_info" IS '多租户改造';
 -- ----------------------------
 -- Table structure for permissions
 -- ----------------------------
-DROP TABLE IF EXISTS "permissions";
 CREATE TABLE "permissions" (
   "role" varchar(50)  NOT NULL,
   "resource" varchar(512)  NOT NULL,
@@ -272,7 +264,6 @@ COMMIT;
 -- ----------------------------
 -- Table structure for roles
 -- ----------------------------
-DROP TABLE IF EXISTS "roles";
 CREATE TABLE "roles" (
   "username" varchar(50)  NOT NULL,
   "role" varchar(50)  NOT NULL
@@ -289,7 +280,6 @@ COMMIT;
 -- ----------------------------
 -- Table structure for tenant_capacity
 -- ----------------------------
-DROP TABLE IF EXISTS "tenant_capacity";
 CREATE TABLE "tenant_capacity" (
   "id" bigserial NOT NULL,
   "tenant_id" varchar(128)  NOT NULL,
@@ -324,7 +314,6 @@ COMMIT;
 -- ----------------------------
 -- Table structure for tenant_info
 -- ----------------------------
-DROP TABLE IF EXISTS "tenant_info";
 CREATE TABLE "tenant_info" (
   "id" bigserial NOT NULL,
   "kp" varchar(128)  NOT NULL,
@@ -355,7 +344,6 @@ COMMIT;
 -- ----------------------------
 -- Table structure for users
 -- ----------------------------
-DROP TABLE IF EXISTS "users";
 CREATE TABLE "users" (
   "username" varchar(50)  NOT NULL,
   "password" varchar(500)  NOT NULL,
