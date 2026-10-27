@@ -57,3 +57,6 @@ db.pool.config.driverClassName=org.postgresql.Driver
 ## 三、其他数据库插件开发
 
 可参考nacos-postgresql-datasource-plugin-ext工程，新创建Maven项目，实现AbstractDatabaseDialect类，重写相关的分页操作逻辑与方法，并创建相应的mapper实现。
+## 达梦适配
+
+平台标识为 `dameng`，构建、数据库初始化和 Nacos 配置见 [达梦插件说明](nacos-dameng-datasource-plugin-ext/README.md)。

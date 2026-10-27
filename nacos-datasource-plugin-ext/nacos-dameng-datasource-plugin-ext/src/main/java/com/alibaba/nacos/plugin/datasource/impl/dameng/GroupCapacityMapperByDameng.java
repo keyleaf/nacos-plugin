@@ -1,0 +1,80 @@
+/*
+ * Copyright 1999-2022 Alibaba Group Holding Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.alibaba.nacos.plugin.datasource.impl.dameng;
+
+import com.alibaba.nacos.plugin.datasource.constants.DatabaseTypeConstant;
+import com.alibaba.nacos.plugin.datasource.constants.PrimaryKeyConstant;
+import com.alibaba.nacos.plugin.datasource.impl.base.BaseGroupCapacityMapper;
+
+/**
+ * The base implementation of GroupCapacityMapper.
+ *
+ * @author Long Yu
+ **/
+public class GroupCapacityMapperByDameng extends BaseGroupCapacityMapper {
+    
+    @Override
+    public String insertIntoSelect() {
+        return super.insertIntoSelect().replace('`', '"');
+    }
+
+    @Override
+    public String insertIntoSelectByWhere() {
+        return super.insertIntoSelectByWhere().replace('`', '"');
+    }
+
+    @Override
+    public String incrementUsageByWhereQuotaEqualZero() {
+        return super.incrementUsageByWhereQuotaEqualZero().replace('`', '"');
+    }
+
+    @Override
+    public String incrementUsageByWhereQuotaNotEqualZero() {
+        return super.incrementUsageByWhereQuotaNotEqualZero().replace('`', '"');
+    }
+
+    @Override
+    public String incrementUsageByWhere() {
+        return super.incrementUsageByWhere().replace('`', '"');
+    }
+
+    @Override
+    public String decrementUsageByWhere() {
+        return super.decrementUsageByWhere().replace('`', '"');
+    }
+
+    @Override
+    public String updateUsage() {
+        return super.updateUsage().replace('`', '"');
+    }
+
+    @Override
+    public String updateUsageByWhere() {
+        return super.updateUsageByWhere().replace('`', '"');
+    }
+
+    @Override
+    public String[] getPrimaryKeyGeneratedKeys() {
+        return PrimaryKeyConstant.UPPER_RETURN_PRIMARY_KEYS;
+    }
+
+    @Override
+    public String getDataSource() {
+        return DatabaseTypeConstant.DAMENG;
+    }
+    
+}

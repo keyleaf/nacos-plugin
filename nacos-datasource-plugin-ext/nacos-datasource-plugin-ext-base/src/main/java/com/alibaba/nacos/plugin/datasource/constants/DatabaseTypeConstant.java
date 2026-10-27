@@ -23,6 +23,8 @@ package com.alibaba.nacos.plugin.datasource.constants;
  **/
 public class DatabaseTypeConstant {
 
+    public static final String DAMENG = "dameng";
+
     public static final String HIGHGO = "highgo";
 
     public static final String POSTGRESQL = "postgresql";

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- Nacos 的插入或更新逻辑依赖 DuplicateKeyException。 -->
+    <bean id="DM" class="org.springframework.jdbc.support.SQLErrorCodes">
+        <property name="databaseProductNames" value="DM DBMS"/>
+        <property name="duplicateKeyCodes" value="-6602"/>
+    </bean>
+</beans>
