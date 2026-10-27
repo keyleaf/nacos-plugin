@@ -202,7 +202,7 @@ CREATE TABLE "group_capacity" (
   "max_size" int4 NOT NULL,
   "max_aggr_count" int4 NOT NULL,
   "max_aggr_size" int4 NOT NULL,
-  "max_history_count" int4 NOT NULL,
+  "max_history_count" int4 NOT NULL DEFAULT 0,
   "gmt_create" timestamp(6) NOT NULL,
   "gmt_modified" timestamp(6) NOT NULL
 )
@@ -298,7 +298,7 @@ CREATE TABLE "tenant_capacity" (
   "max_size" int4 NOT NULL,
   "max_aggr_count" int4 NOT NULL,
   "max_aggr_size" int4 NOT NULL,
-  "max_history_count" int4 NOT NULL,
+  "max_history_count" int4 NOT NULL DEFAULT 0,
   "gmt_create" timestamp(6) NOT NULL,
   "gmt_modified" timestamp(6) NOT NULL
 )
