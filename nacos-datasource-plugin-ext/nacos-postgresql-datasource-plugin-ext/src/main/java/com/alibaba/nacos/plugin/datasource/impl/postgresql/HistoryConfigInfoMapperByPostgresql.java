@@ -28,8 +28,8 @@ public class HistoryConfigInfoMapperByPostgresql extends HistoryConfigInfoMapper
     
     @Override
     public String removeConfigHistory() {
-        String sql = "WITH temp_table as (SELECT id FROM his_config_info WHERE gmt_modified < ? LIMIT ? ) " +
-                "DELETE FROM his_config_info WHERE id in (SELECT id FROM temp_table) ";
+        String sql = "WITH temp_table as (SELECT nid FROM his_config_info WHERE gmt_modified < ? LIMIT ? ) " +
+                "DELETE FROM his_config_info WHERE nid in (SELECT nid FROM temp_table) ";
         return sql;
     }
     
