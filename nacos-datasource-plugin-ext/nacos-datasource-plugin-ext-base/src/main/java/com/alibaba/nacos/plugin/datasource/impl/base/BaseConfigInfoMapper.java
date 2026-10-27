@@ -77,7 +77,7 @@ public class BaseConfigInfoMapper extends ConfigInfoMapperByMySql {
         String innerSql = getLimitPageSqlWithOffset(" SELECT id FROM config_info WHERE tenant_id LIKE ? ORDER BY id ", startRow, pageSize);
         return " SELECT data_id,group_id,app_name  FROM ( "
                 + innerSql
-                + " g, config_info t WHERE g.id = t.id  ";
+                + " ) g, config_info t WHERE g.id = t.id  ";
     }
     
     @Override
@@ -143,7 +143,7 @@ public class BaseConfigInfoMapper extends ConfigInfoMapperByMySql {
             where += " AND data_id LIKE ? ";
         }
         if (!StringUtils.isBlank(params.get(GROUP))) {
-            where += " AND group_id LIKE ";
+            where += " AND group_id LIKE ? ";
         }
         if (!StringUtils.isBlank(params.get(CONTENT))) {
             where += " AND content LIKE ? ";
