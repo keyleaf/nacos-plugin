@@ -27,6 +27,46 @@ import com.alibaba.nacos.plugin.datasource.impl.base.BaseGroupCapacityMapper;
 public class GroupCapacityMapperByHighgo extends BaseGroupCapacityMapper {
     
     @Override
+    public String insertIntoSelect() {
+        return super.insertIntoSelect().replace('`', '"');
+    }
+
+    @Override
+    public String insertIntoSelectByWhere() {
+        return super.insertIntoSelectByWhere().replace('`', '"');
+    }
+
+    @Override
+    public String incrementUsageByWhereQuotaEqualZero() {
+        return super.incrementUsageByWhereQuotaEqualZero().replace('`', '"');
+    }
+
+    @Override
+    public String incrementUsageByWhereQuotaNotEqualZero() {
+        return super.incrementUsageByWhereQuotaNotEqualZero().replace('`', '"');
+    }
+
+    @Override
+    public String incrementUsageByWhere() {
+        return super.incrementUsageByWhere().replace('`', '"');
+    }
+
+    @Override
+    public String decrementUsageByWhere() {
+        return super.decrementUsageByWhere().replace('`', '"');
+    }
+
+    @Override
+    public String updateUsage() {
+        return super.updateUsage().replace('`', '"');
+    }
+
+    @Override
+    public String updateUsageByWhere() {
+        return super.updateUsageByWhere().replace('`', '"');
+    }
+
+    @Override
     public String getDataSource() {
         return DatabaseTypeConstant.HIGHGO;
     }

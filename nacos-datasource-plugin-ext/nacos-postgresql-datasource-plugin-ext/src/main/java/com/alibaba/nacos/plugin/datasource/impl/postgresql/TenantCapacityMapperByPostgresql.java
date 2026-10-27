@@ -27,6 +27,36 @@ import com.alibaba.nacos.plugin.datasource.impl.base.BaseTenantCapacityMapper;
 public class TenantCapacityMapperByPostgresql extends BaseTenantCapacityMapper {
     
     @Override
+    public String incrementUsageWithDefaultQuotaLimit() {
+        return super.incrementUsageWithDefaultQuotaLimit().replace('`', '"');
+    }
+
+    @Override
+    public String incrementUsageWithQuotaLimit() {
+        return super.incrementUsageWithQuotaLimit().replace('`', '"');
+    }
+
+    @Override
+    public String incrementUsage() {
+        return super.incrementUsage().replace('`', '"');
+    }
+
+    @Override
+    public String decrementUsage() {
+        return super.decrementUsage().replace('`', '"');
+    }
+
+    @Override
+    public String correctUsage() {
+        return super.correctUsage().replace('`', '"');
+    }
+
+    @Override
+    public String insertTenantCapacity() {
+        return super.insertTenantCapacity().replace('`', '"');
+    }
+
+    @Override
     public String getDataSource() {
         return DatabaseTypeConstant.POSTGRESQL;
     }
